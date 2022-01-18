@@ -1,33 +1,28 @@
 const express = require("express");
-// var cors = require('cors');
 const app = express();
-const seedData = require("./models/logs")
+const budgetingController = require("./controllers/budgetingController.js")
+var cors = require('cors');
 
 app.use(express.json());
+
+app.use(cors())
 
 app.use((req, res, next) => {
     next()
 });
 
-// const validateURL = (req, res, next) => {
-//     next();
-// };
-
-// app.use(cors());
+app.use((req, res, next) => {
+    next();
+})
 
 app.get("/", (req, res) => {
-    res.send(" Hello, we've recieved your request. ")
+    res.send(" Welcome to the Budgeting App ")
 });
 
-app.get("/budgets", (req, res) => {
-    res.json(seedData);
+app.use("/budgets", budgetingController)
+
+app.get("*", (req, res) => {
+    res.status(404).json({ error: "Page not found"})
 });
-
-app.post("/budgets", (req, res) => {
-    seedData.push(req.body);
-    res.json(seedData[seedData.length - 1]);
-});
-
-
 
 module.exports = app;
