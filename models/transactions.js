@@ -10,7 +10,7 @@ module.exports = [
     item_name: "Restaurant",
     amount: 23,
     date: "January 27",
-    from: "Grocery Store",
+    from: "Carbone",
     category: "Income"
   },
   {
