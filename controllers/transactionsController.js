@@ -20,8 +20,8 @@ const ValidateURL = (req, res, next) => {
 };
 
 transactions.post("/", ValidateURL, (req, res) => {
-    transactionsArr.push(req.body);
-    res.json(transactionsArr[transactionsArr.length - 1]);
+    transactionsArr.unshift(req.body);
+    res.json(transactionsArr[0]);
 });
 
 transactions.delete("/:index", (req, res) => {

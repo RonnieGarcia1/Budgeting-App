@@ -8,7 +8,7 @@ module.exports = [
   },
   {
     item_name: "Restaurant",
-    amount: 23,
+    amount: 73,
     date: "January 27",
     from: "Carbone",
     category: "Income"
