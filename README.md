@@ -1,8 +1,11 @@
-Budgeting App
+## Backend GitHub Link
+https://github.com/RonnieGarcia1/Budgeting-App
 
-$ touch server.js
-$ npm init
-$ npm install express dotenv cors
-$ touch app.js
+## Frontend GitHub Link
+https://github.com/RonnieGarcia1/Budgeting-app-react
 
-created by Ronnie Garcia using Node Express & React
+## Deployed Backend Link
+https://mighty-cliffs-46642.herokuapp.com/transactions
+
+## Deployed Frontend Link
+Netlify deployment: https://vibrant-varahamihira-4e0cdc.netlify.app/
