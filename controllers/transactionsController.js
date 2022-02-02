@@ -9,7 +9,7 @@ transactions.get("/", (req, res) => {
 transactions.get("/:index", (req, res) => {
     const { index } = req.params;
     if(transactionsArr[index]){
-        res.json(transactionsArr[index]);
+       return res.json(transactionsArr[index]);
     } else {
         res.status(404).json({ message: "Budgets not found"});
     }
@@ -34,8 +34,12 @@ transactions.delete("/:index", (req, res) => {
     }
 });
 
-transactions.put("/:index", (res, req) => {
+transactions.put("/:index", (req, res) => {
     let { index } = req.params;
+    console.log(index)
+    if(!transactionsArr[index]){
+        return res.status(422).json({error: "not found"})
+    }
     let { item_name, amount, date, from, category } = req.body;
     if(item_name && amount && date && from && category ){
         transactionsArr[index] = {
